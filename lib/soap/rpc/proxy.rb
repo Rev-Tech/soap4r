@@ -290,9 +290,8 @@ private
       xml = filter.on_inbound(xml, opt)
       break unless xml
     end
-    byebug
+    
     env = Processor.unmarshal(xml, opt)
-	  doc = Nokogiri.XML(xml)
 
     if @return_response_as_xml
       opt[:response_as_xml] = xml
