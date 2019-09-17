@@ -201,6 +201,7 @@ private
 
   def decode_soap_envelope(ns, ele, attrs, parent)
     o = nil
+	  byebug
     if ele.name == EleEnvelope
       o = SOAPEnvelope.new
       if ext = @opt[:external_content]
