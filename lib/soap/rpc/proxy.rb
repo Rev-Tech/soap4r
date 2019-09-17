@@ -189,7 +189,7 @@ public
     if conn_data.receive_string.empty?
       return nil
     end
-    puts unmarshal(conn_data, resopt)
+    unmarshal(conn_data, resopt)
   end
 
   def check_fault(body)
