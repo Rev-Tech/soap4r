@@ -152,7 +152,7 @@ public
       return nil
     end
     raise EmptyResponseError unless env
-	  byebug
+	  
     receive_headers(env.header)
     begin
       check_fault(env.body)
@@ -189,7 +189,7 @@ public
     if conn_data.receive_string.empty?
       return nil
     end
-    unmarshal(conn_data, resopt)
+    puts unmarshal(conn_data, resopt)
   end
 
   def check_fault(body)
