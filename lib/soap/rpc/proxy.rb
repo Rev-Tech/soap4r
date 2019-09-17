@@ -289,15 +289,18 @@ private
       xml = filter.on_inbound(xml, opt)
       break unless xml
     end
-	  byebug
+    
     env = Processor.unmarshal(xml, opt)
+	  doc = Nokogiri.XML(xml)
     if @return_response_as_xml
       opt[:response_as_xml] = xml
     end
-    unless env.is_a?(::SOAP::SOAPEnvelope)
+    unless doc.root.name === "Envelope"
       raise ResponseFormatError.new("response is not a SOAP envelope: #{env}")
     end
-    env
+#     unless env.is_a?(::SOAP::SOAPEnvelope)
+#       raise ResponseFormatError.new("response is not a SOAP envelope: #{env}")
+#     end
   end
 
   def create_encoding_opt(hash = nil)
