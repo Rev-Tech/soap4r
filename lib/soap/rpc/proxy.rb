@@ -301,6 +301,7 @@ private
 #     unless env.is_a?(::SOAP::SOAPEnvelope)
 #       raise ResponseFormatError.new("response is not a SOAP envelope: #{env}")
 #     end
+    env
   end
 
   def create_encoding_opt(hash = nil)
