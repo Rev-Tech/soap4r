@@ -152,6 +152,7 @@ public
       return nil
     end
     raise EmptyResponseError unless env
+	  byebug
     receive_headers(env.header)
     begin
       check_fault(env.body)
